@@ -30,11 +30,11 @@ ignore_folder_list = ["thirdparty","Support",".svn","paycenter","UMMobClick.fram
 #创建函数数量范围
 create_func_min = 2
 create_func_max = 10
-			
+            
 #创建垃圾文件数量范围
 create_file_min = 10
 create_func_max = 20
-			
+            
 #相关路径的默认值
 proj_ios_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac")
 ios_origin_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac/ios_origin")
@@ -142,7 +142,7 @@ def getOCMMFileText(class_name):
 
 #添加垃圾文件到parent_folder/trash/
 def addOCFile(parent_folder):
-	global create_file_min, create_file_max
+    global create_file_min, create_file_max
     file_list = []
     target_folder = os.path.join(parent_folder, "trash")
     if os.path.exists(target_folder):
@@ -184,7 +184,8 @@ def main():
     app_args = parse_args()
     global proj_ios_path, ios_src_path, ios_origin_path
     if app_args.proj_path != "":
-        proj_ios_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac_" + app_args.proj_path)
+        #proj_ios_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac_" + app_args.proj_path)
+        proj_ios_path = app_args.proj_path
     ios_src_path = os.path.join(proj_ios_path, "ios")
     ios_origin_path = os.path.join(proj_ios_path, "ios_origin")
 

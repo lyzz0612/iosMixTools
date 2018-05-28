@@ -201,7 +201,7 @@ def main():
         print "\t备份OC代码到" + os.path.abspath(backup_ios_folder)
         if os.path.exists(backup_ios_folder):
             shutil.rmtree(backup_ios_folder)
-        shutil.copytree(backup_ios_folder)
+        shutil.copytree(ios_src_path, backup_ios_folder)
 
         print "\t开始替换"
         trash_folder = os.path.join(ios_src_path, "trash")

@@ -20,6 +20,8 @@ sys.setdefaultencoding("utf-8")
 script_path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 #垃圾代码临时存放目录
 target_ios_folder = os.path.join(script_path, "./target_ios")
+#备份目录
+backup_ios_folder = os.path.join(script_path, "./backup_ios")
 
 #忽略文件列表，不给这些文件添加垃圾函数
 ignore_file_list = ["main.m", "GNative.mm", "MobClickCpp.mm"]
@@ -33,12 +35,10 @@ create_func_max = 10
             
 #创建垃圾文件数量范围
 create_file_min = 10
-create_func_max = 20
+create_file_max = 20
             
-#相关路径的默认值
-proj_ios_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac")
-ios_origin_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac/ios_origin")
-ios_src_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac/ios")
+#oc代码目录
+ios_src_path = ""
 
 #单词列表，用以随机名称
 with open(os.path.join(script_path, "./word_list.json"), "r") as fileObj:
@@ -172,48 +172,24 @@ def addOCFile(parent_folder):
 #解析参数       
 def parse_args():
     parser = argparse.ArgumentParser(description='oc垃圾代码生成工具.')
-    parser.add_argument('--proj', dest='proj_path', type=str, required=False, default="", help='proj.ios_mac_xx的路径')
-    parser.add_argument('--replace', dest='replace_ios', required=False, help='替换掉proj_path/ios', action="store_true")
-    parser.add_argument('--revert', dest='revert_ios', required=False, help='使用proj_path/ios_origin回滚ios', action="store_true")
-    parser.add_argument('--backup', dest='backup_ios', required=False, help='强制备份proj_path/ios到ios_origin', action="store_true")
+    parser.add_argument('--oc_folder', dest='oc_folder', type=str, required=True, help='OC代码所在目录')
+    parser.add_argument('--replace', dest='replace_ios', required=False, help='直接替换oc源代码', action="store_true")
 
     args = parser.parse_args()
     return args
 
 def main():
     app_args = parse_args()
-    global proj_ios_path, ios_src_path, ios_origin_path
-    if app_args.proj_path != "":
-        #proj_ios_path = os.path.join(script_path, "../../frameworks/runtime-src/proj.ios_mac_" + app_args.proj_path)
-        proj_ios_path = app_args.proj_path
-    ios_src_path = os.path.join(proj_ios_path, "ios")
-    ios_origin_path = os.path.join(proj_ios_path, "ios_origin")
-
-    #回滚不需要添加垃圾代码
-    if app_args.revert_ios:
-        print "用ios_origin回滚ios"
-        if not os.path.exists(ios_origin_path):
-            print "\tios_origin文件夹不存在."
-            exit(1)
-        if os.path.exists(ios_src_path):
-            shutil.rmtree(ios_src_path)
-        shutil.copytree(ios_origin_path, ios_src_path)
+    global ios_src_path, backup_ios_folder, target_ios_folder
+    ios_src_path = app_args.oc_folder
+    if not os.path.exists(ios_src_path):
+        print "oc_folder path not exist."
         exit(0)
 
-    #删掉ios_origin_path，强制备份ios
-    if app_args.backup_ios:
-        print "删除ios_origin"
-        if os.path.exists(ios_origin_path):
-            shutil.rmtree(ios_origin_path)
-
-    if not os.path.exists(ios_origin_path):
-        print "拷贝ios到ios_origin"
-        shutil.copytree(ios_src_path, ios_origin_path)
-
-    print "拷贝ios_origin到target_ios"
+    print "拷贝OC代码到target_ios"
     if os.path.exists(target_ios_folder):
         shutil.rmtree(target_ios_folder)
-    shutil.copytree(ios_origin_path, target_ios_folder)
+    shutil.copytree(ios_src_path, target_ios_folder)
 
     print "开始创建oc文件到trash目录"
     addOCFile(target_ios_folder)
@@ -221,7 +197,13 @@ def main():
     addOCFunctions(target_ios_folder)
 
     if app_args.replace_ios:
-        print "\n用target_ios替换ios"
+        print "\n用target_ios替换原目录"
+        print "\t备份OC代码到" + os.path.abspath(backup_ios_folder)
+        if os.path.exists(backup_ios_folder):
+            shutil.rmtree(backup_ios_folder)
+        shutil.copytree(backup_ios_folder)
+
+        print "\t开始替换"
         trash_folder = os.path.join(ios_src_path, "trash")
         if os.path.exists(trash_folder):
             shutil.rmtree(trash_folder)
@@ -234,6 +216,9 @@ def main():
                     target_path = full_path.replace(target_ios_folder, ios_src_path)
                     shutil.copy(full_path, target_path)
         print "替换成功\n需要在Xcode上重新添加trash文件下的oc文件"
+    else:
+        print "垃圾代码生成完毕，垃圾代码目录：" + os.path.abspath(target_ios_folder)
+
     print "\nfinished"
 
 if __name__ == "__main__":

@@ -70,10 +70,10 @@ def dealWithIos():
 
                 #在可能引用的地方替换
                 old_file_base_name = os.path.splitext(file)[0]
-                new_file_base_name = old_file_base_name.replace(old_upper_prefix, new_upper_prefix)
+                new_file_base_name = old_file_base_name.replace(old_prefix, new_prefix)
                 renameInAllFile(old_file_base_name, new_file_base_name)
 
-    for parent, folders, files in os.walk(ios_path):
+    for parent, folders, files in os.walk(ios_src_path):
         for folder in folders:
             old_full_path = os.path.join(parent, folder)
             if folder.startswith(old_prefix) and not isNeedIgnore(old_full_path):
@@ -103,10 +103,10 @@ def main():
     global old_prefix, new_prefix, ios_src_path, project_file_path
     app_args = parse_args()
 
-    old_prefix = app_ars.old_prefix
-    new_prefix = app_ars.new_prefix
-    ios_src_path = app_ars.ios_path
-    project_file_path = app_ars.proj_path
+    old_prefix = app_args.old_prefix
+    new_prefix = app_args.new_prefix
+    ios_src_path = app_args.ios_path
+    project_file_path = app_args.proj_path
     if not os.path.exists(ios_src_path):
         print "ios_path not exists: " +  ios_src_path
         exit(0)
@@ -114,6 +114,8 @@ def main():
         print "proj_path not exists: " +  project_file_path
         exit(0)
 
+    print "请提前备份文件夹或确认在版本管理软件中"
+    os.system("pause")
     dealWithIos()
  
 

@@ -40,6 +40,9 @@ create_file_max = 20
 #oc代码目录
 ios_src_path = ""
 
+#确保添加的函数不重名
+funcname_set = set()
+
 #单词列表，用以随机名称
 with open(os.path.join(script_path, "./word_list.json"), "r") as fileObj:
     word_name_list = json.load(fileObj)
@@ -84,7 +87,8 @@ def appendTextToOCFile(file_path, text):
 
 #处理单个OC文件，添加垃圾函数。确保其对应头文件存在于相同目录
 def dealWithOCFile(filename, file_path):
-    global target_ios_folder,create_func_min,create_func_max
+    global target_ios_folder,create_func_min,create_func_max,funcname_set
+    funcname_set.clear()
     end_index = file_path.rfind(".")
     pre_name = file_path[:end_index]
     header_path = pre_name + ".h"
@@ -122,10 +126,16 @@ def addOCFunctions(parent_folder):
 
 #新创建的垃圾文件header模板
 def getOCHeaderFileText(class_name):
+    global funcname_set
+    new_func_name = getOneName()
+    while new_func_name in funcname_set:
+        new_func_name = getOneName()
+    funcname_set.add(new_func_name)
+
     text = [
         "#import <Foundation/Foundation.h>\n\n",
         "@interface %s : NSObject {\n" %(class_name),
-        "\tint %s;\n" %(getOneName()),
+        "\tint %s;\n" %(new_func_name),
         "\tfloat %s;\n" %(getOneName()),
         "}\n\n@end"
     ]

@@ -1,5 +1,5 @@
 # iosMixTools
-ios混淆脚本工具,顺便安利一波:[IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)
+ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)
 
 ### 1.  addNative.py 生成oc垃圾代码工具
 此脚本会扫描指定proj.ios_mac下的ios目录，给OC文件添加垃圾函数，同时创建垃圾文件到ios/trash目录。它有以下参数可选：
@@ -28,3 +28,24 @@ addNative.py里还有一些配置可以看需求手动修改，如生成垃圾�
 运行示例：`python renameNative.py --old_prefix ANDROID --new_prefix IOS --ios_path xx/xx/xx/ --proj_path xx/xx/xx.xcodeproj`
 
 
+### 3. autoBornCode.py 添加lua和png，修改资源文件MD5
+此脚本会扫描指定文件夹，在路径包含/res的目录创建png, 其他地方创建lua。根据目录下的文件和文件夹数随机添加文件和子文件夹。然后会给大部分类型资源文件添加一些无效内容来改变其MD5。
+
+#### 参数说明
+
+* `--res RESOURCE_DIR` 资源目录
+* `--target TARGET_FOLDER` 可选参数，修改后的资源存放目录。不设置为脚本目录下的target_resource 
+
+在代码的最前面有个匹配规则, path_exclude表示必须是不包含该字符串的路径才能创建该类型文件，path_include表示必须是包含该字符串的路径才要创建该类型文件
+```
+match_rule = {
+    ".png": {
+        "path_include": os.path.sep + "res",
+    },
+    ".lua": {
+        # "path_include": "src",
+        "path_exclude": os.path.sep + "res",
+    },
+}
+```
+**TODO**音效文件修改MD5值

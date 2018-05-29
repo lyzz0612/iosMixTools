@@ -115,7 +115,7 @@ def main():
         exit(0)
 
     print "请提前备份文件夹或确认在版本管理软件中"
-    os.system("pause")
+    raw_input("回车继续执行")
     dealWithIos()
  
 

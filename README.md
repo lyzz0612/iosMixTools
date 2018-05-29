@@ -2,7 +2,8 @@
 ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)
 
 ### 1.  addNative.py 生成oc垃圾代码工具
-此脚本会扫描指定proj.ios_mac下的ios目录，给OC文件添加垃圾函数，同时创建垃圾文件到ios/trash目录。它有以下参数可选：
+此脚本会扫描指定目录，给OC文件添加垃圾函数，同时创建垃圾文件到/trash目录。
+#### 参数说明
 
 * ` --oc_folder OC_FOLDER` OC_FOLDER为OC代码所在目录
 * `--replace`替换OC_FOLDER下的原文件，同时原代码会备份到脚本目录下的backup_ios目录。不指定此项垃圾代码只会放到脚本目录下的target_ios/

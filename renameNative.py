@@ -95,7 +95,7 @@ def parse_args():
     parser.add_argument('--old_prefix', dest='old_prefix', type=str, required=True, help='原类名前缀')
     parser.add_argument('--new_prefix', dest='new_prefix', type=str, required=True, help='替换后类名前缀')
     parser.add_argument('--ios_path', dest='ios_path', type=str, required=True, help='OC文件目录')
-    parser.add_argument('--proj_path', dest='proj_path', type=str, required=True, help='xx.xcodeproj/project.pbxproj路径')
+    parser.add_argument('--proj_path', dest='proj_path', type=str, required=True, help='xx.xcodeproj路径')
     args = parser.parse_args()
     return args
 
@@ -106,7 +106,7 @@ def main():
     old_prefix = app_args.old_prefix
     new_prefix = app_args.new_prefix
     ios_src_path = app_args.ios_path
-    project_file_path = app_args.proj_path
+    project_file_path = os.path.join(app_args.proj_path, "project.pbxproj")
     if not os.path.exists(ios_src_path):
         print "ios_path not exists: " +  ios_src_path
         exit(0)

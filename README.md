@@ -23,7 +23,8 @@ addNative.py里还有一些配置可以看需求手动修改，如生成垃圾�
 * `--old_prefix OLD_PREFIX` 替换前的类名前缀
 * `--new_prefix NEW_PREFIX` 替换后的类名前缀
 * `--ios_path IOS_PATH` OC文件目录
-* `--proj_path PROJ_PATH ` xx.xcodeproj/project.pbxproj路径
+* `--proj_path PROJ_PATH ` xx.xcodeproj路径
 
+运行示例：`python renameNative.py --old_prefix ANDROID --new_prefix IOS --ios_path xx/xx/xx/ --proj_path xx/xx/xx.xcodeproj`
 
 

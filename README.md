@@ -49,4 +49,13 @@ match_rule = {
     },
 }
 ```
+
 **TODO**音效文件修改MD5值
+
+
+### 4. O-LLVM编译混淆
+
+[Obfuscator-LLVM在iOS中的实践](https://www.jianshu.com/p/a631b5584de6)
+
+[obfuscator-llvm Github Installation](https://github.com/obfuscator-llvm/obfuscator/wiki/Installation)
+

@@ -53,9 +53,33 @@ match_rule = {
 **TODO**音效文件修改MD5值
 
 
-### 4. O-LLVM编译混淆
+### 4. iOS加固插件
+[实力比拼！四款iOS加固工具评测](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/)
 
-[Obfuscator-LLVM在iOS中的实践](https://www.jianshu.com/p/a631b5584de6)
+1. Obfuscator-LLVM
 
-[obfuscator-llvm Github Installation](https://github.com/obfuscator-llvm/obfuscator/wiki/Installation)
+[Obfuscator-LLVM在iOS中的实践](https://www.jianshu.com/p/a631b5584de6)   
+[obfuscator-llvm Github Installation](https://github.com/obfuscator-llvm/obfuscator/wiki/Installation)  
+配置了一下，编译了好长时间发现支持的clang版本只到4.0，很多issue都没人管了，而且不支持字符串混淆，优点是开源，有空可以自己折腾一下
+
+2. 网易的试用需要审核，看文章还是命令行的，没空等你了byebye
+
+[网易易盾](http://dun.163.com/product/ios-reinforce)
+
+3. 顶象的试用插件有大概半个月的期限，只支持30%的加固，不过对我们提审的来说应该够了
+
+[顶象试用下载](https://appen.dingxiang-inc.com/download/file?type=4&url=https%3A%2F%2Fappen.dingxiang-inc.com%2Fdownload%2FiosVm)     
+[顶象文档](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/) 
+
+
+4. 几维安全、360都是在线加固的，需要支持bitcode 
+
+[几维安全静态库](https://cloud.kiwisec.com/encrypt/lib)     
+[加固保iOS](http://jiagu.360.cn/#/app/android)
+
+
+
+
+
+
 

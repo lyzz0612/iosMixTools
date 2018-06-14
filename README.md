@@ -22,12 +22,15 @@ addNative.py里还有一些配置可以看需求手动修改，如生成垃圾�
 
 #### 参数说明：
 
+* `--add_prefix PREFIX` 添加类名前缀，有此项old_prefix和new_prefix将不起作用，此项请提前在renameNative.py文件中ignore_path_text添加不需要前缀的文件或路径
 * `--old_prefix OLD_PREFIX` 替换前的类名前缀
 * `--new_prefix NEW_PREFIX` 替换后的类名前缀
 * `--ios_path IOS_PATH` OC文件目录
 * `--proj_path PROJ_PATH ` xx.xcodeproj路径
 
-运行示例：`python renameNative.py --old_prefix ANDROID --new_prefix IOS --ios_path xx/xx/xx/ --proj_path xx/xx/xx.xcodeproj`
+运行示例：
+`python renameNative.py --add_prefix ANDROID --ios_path xx/xx/xx/ --proj_path xx/xx/xx.xcodeproj`      
+`python renameNative.py --old_prefix ANDROID --new_prefix IOS --ios_path xx/xx/xx/ --proj_path xx/xx/xx.xcodeproj`
 
 
 ### 3. autoBornCode.py 添加lua和png，修改资源文件MD5

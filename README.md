@@ -1,5 +1,6 @@
 # iosMixTools
-ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)
+ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)    
+有任何问题和建议欢迎联系： email: lyzz0612@qq.com  qq: 1043727336
 
 ### 1.  addNative.py 生成oc垃圾代码工具
 此脚本会扫描指定目录，给OC文件添加垃圾函数，同时创建垃圾文件到/trash目录。

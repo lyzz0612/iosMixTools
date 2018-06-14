@@ -144,7 +144,7 @@ def getOCHeaderFileText(class_name):
 #新创建的垃圾文件mm模板
 def getOCMMFileText(class_name):
     text = [
-        "#import <%s.h>\n\n" %(class_name),
+        '#import "%s.h"\n\n' %(class_name),
         "@implementation %s\n" %(class_name),
         "\n\n@end"
     ]

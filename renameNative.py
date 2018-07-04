@@ -106,6 +106,7 @@ def addPreFix():
                 old_file_base_name = os.path.splitext(file)[0]
                 new_file_base_name = os.path.splitext(new_file_name)[0]
                 renameInAllFile(old_file_base_name, new_file_base_name)
+                renameInAllFile(add_prefix+add_prefix, add_prefix)
 
     for parent, folders, files in os.walk(ios_src_path):
         for folder in folders:

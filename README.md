@@ -2,6 +2,9 @@
 ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)    
 有任何问题和建议欢迎联系： email: lyzz0612@qq.com
 
+## Updated
+这些工具用完目前还是2.1被拒, 4.3的可以尝试下；混淆工具试用版也被拒，目前在打算先用小游戏过审。
+
 ### 1.  addNative.py 生成oc垃圾代码工具
 此脚本会扫描指定目录，给OC文件添加垃圾函数，同时创建垃圾文件到/trash目录。
 #### 参数说明
@@ -70,7 +73,7 @@ match_rule = {
 
 [网易易盾](http://dun.163.com/product/ios-reinforce)
 
-3. 顶象的试用插件有大概半个月的期限，只支持30%的加固，不过对我们提审的来说应该够了
+3. 顶象的试用插件有大概半个月的期限，~~只支持30%的加固，不过对我们提审的来说应该够了~~ 经试验试用版提审会被2.3.1拒绝，提示用了代码混淆
 
 [顶象试用下载](https://appen.dingxiang-inc.com/download/file?type=4&url=https%3A%2F%2Fappen.dingxiang-inc.com%2Fdownload%2FiosVm)     
 [顶象文档](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/) 

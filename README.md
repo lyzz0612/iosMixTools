@@ -1,5 +1,5 @@
 # iosMixTools
-ios混淆脚本工具,顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)    
+ios混淆脚本工具,主要用于游戏类。顺便安利一波:  [IOS马甲包混淆](https://blog.csdn.net/lyzz0612/article/details/80390362)    
 有任何问题和建议欢迎联系： email: lyzz0612@qq.com
 
 ## Updated

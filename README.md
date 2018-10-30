@@ -63,7 +63,7 @@ match_rule = {
 
 
 ### 4. iOS加固插件
-[实力比拼！四款iOS加固工具评测](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/)
+[五款iOS加固产品测试与点评](http://telecom.chinabyte.com/300/14570300.shtml)
 
 1. Obfuscator-LLVM
 

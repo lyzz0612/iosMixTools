@@ -77,13 +77,13 @@ match_rule = {
 
 3. 顶象的试用插件有大概半个月的期限，~~只支持30%的加固，不过对我们提审的来说应该够了~~ 经试验试用版提审会被2.3.1拒绝，提示用了代码混淆
 
-[顶象试用下载](https://appen.dingxiang-inc.com/download/file?type=4&url=https%3A%2F%2Fappen.dingxiang-inc.com%2Fdownload%2FiosVm)     
+[顶象](https://www.dingxiang-inc.com/business/ios)     
 [顶象文档](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/) 
 
 
 4. 几维安全、360都是在线加固的，需要支持bitcode 
 
-[几维安全静态库](https://cloud.kiwisec.com/encrypt/lib)     
+[几维安全静态库](https://www.kiwisec.com/product/app-encrypt.html)     
 [加固保iOS](http://jiagu.360.cn/#/app/android)
 
 

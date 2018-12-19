@@ -64,6 +64,7 @@ match_rule = {
 
 ### 4. iOS加固插件
 [五款iOS加固产品测试与点评](http://telecom.chinabyte.com/300/14570300.shtml)
+
 [加固产品比较](https://www.codercto.com/a/28193.html)
 
 1. Obfuscator-LLVM
@@ -84,10 +85,11 @@ match_rule = {
 
 4. 几维安全、360都是在线加固的
 
-[几维安全静态库](https://www.kiwisec.com/product/app-encrypt.html)     
+[几维安全静态库](https://www.kiwisec.com/product/app-encrypt.html) 
 [加固保iOS](http://jiagu.360.cn/#/app/android)
 
-5. 数字盾甲，上传整包加固
+5. ~~数字盾甲，上传整包加固~~加固完成才发现下载需要支付，还以为免费试用的……感觉被骗了包一样
+
 [数字盾甲](https://dun.shuzilm.cn/shield)
 
 

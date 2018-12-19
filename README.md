@@ -64,6 +64,7 @@ match_rule = {
 
 ### 4. iOS加固插件
 [五款iOS加固产品测试与点评](http://telecom.chinabyte.com/300/14570300.shtml)
+[加固产品比较](https://www.codercto.com/a/28193.html)
 
 1. Obfuscator-LLVM
 
@@ -71,7 +72,7 @@ match_rule = {
 [obfuscator-llvm Github Installation](https://github.com/obfuscator-llvm/obfuscator/wiki/Installation)  
 配置了一下，编译了好长时间发现支持的clang版本只到4.0，很多issue都没人管了，而且不支持字符串混淆，优点是开源，有空可以自己折腾一下
 
-2. 网易的试用需要审核，看文章还是命令行的，没空等你了byebye
+2. 网易的试用需要审核
 
 [网易易盾](http://dun.163.com/product/ios-reinforce)
 
@@ -81,10 +82,13 @@ match_rule = {
 [顶象文档](https://cdn.dingxiang-inc.com/public-service/docs/compiler-ios/) 
 
 
-4. 几维安全、360都是在线加固的，需要支持bitcode 
+4. 几维安全、360都是在线加固的
 
 [几维安全静态库](https://www.kiwisec.com/product/app-encrypt.html)     
 [加固保iOS](http://jiagu.360.cn/#/app/android)
+
+5. 数字盾甲，上传整包加固
+[数字盾甲](https://dun.shuzilm.cn/shield)
 
 
 

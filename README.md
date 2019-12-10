@@ -109,9 +109,6 @@ match_rule = {
 [几维安全静态库](https://www.kiwisec.com/product/app-encrypt.html) 
 [加固保iOS](http://jiagu.360.cn/#/app/android)
 
-5. ~~数字盾甲，上传整包加固~~加固完成才发现下载需要支付，还以为免费试用的……感觉被骗了包一样
-
-[数字盾甲](https://dun.shuzilm.cn/shield)
 
 
 
